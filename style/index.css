@@ -1,0 +1,39 @@
+label, input {
+  display: block;
+}
+
+input {
+    display: block;
+    margin: 0 auto;
+}
+button{
+    color: black;
+}
+body{
+    text-align: center;
+}
+label, input, form{
+    margin-bottom: 1%;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(
+      circle at top center,
+      rgba(255,255,255,0.06),
+      transparent 60%
+    ),
+    linear-gradient(
+      160deg,
+      #223A5E,
+      #2A3F5F,
+      #6E2A38,
+      #D50032
+    );
+}
