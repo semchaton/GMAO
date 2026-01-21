@@ -1,0 +1,7 @@
+coleurs
+    Bleu foncé #0E2038
+    Bleu moins foncé #213A5C
+    Gris-bleau #758D93
+    Gris-bleau +clair #90A4B0
+    Gris clair #A3B5C0
+    Beige #DAD5CF
