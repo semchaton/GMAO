@@ -1,0 +1,11 @@
+import Validation from "./components/4.Validation/Validation"
+function App() {
+
+  return (
+    <div className="min-h-screen bg-slate-700 pt-10">
+      <Validation/>
+    </div>
+  )
+}
+
+export default App
