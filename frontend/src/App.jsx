@@ -4,7 +4,7 @@ import Accueil from "./pages/accueil/Accueil";
 
 function App() {
   return (
-    <div className="min-h-screen bg-slate-700 pt-10">
+    <div className="min-h-screen pt-10">
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/accueil" element={<Accueil />} />

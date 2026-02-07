@@ -1,0 +1,15 @@
+#122034
+    bg-slate-900
+    text-slate-900
+#4b666e
+    bg-slate-600
+    text-slate-600
+#d2ddd8
+    bg-slate-200
+    text-slate-200
+#dc7928
+    bg-orange-500
+    text-orange-500
+#c32439
+    bg-red-600
+    text-red-600
