@@ -1,6 +1,19 @@
 /*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
 @layer properties;
 @layer theme, base, components, utilities;
+
+@layer utilities {
+  .text-center {
+    text-align: center;
+  }
+  .mb-0 {
+    margin-bottom: 0;
+  }
+  .pb-0 {
+    padding-bottom: 0;
+  }
+}
+
 @layer theme {
   :root, :host {
     --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
