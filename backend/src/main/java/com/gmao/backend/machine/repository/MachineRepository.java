@@ -1,0 +1,64 @@
+package com.gmao.backend.machine.repository;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
+import com.gmao.backend.machine.model.Machine;
+
+@Repository
+public class MachineRepository {
+    
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
+
+    public List<Machine> findAll() {
+
+        String sql = """
+            SELECT
+                m.id_machine,
+                m.machine,
+                m.description_machine,
+                m.photo,
+                m.date_implementation,
+
+                c.criticite_machine,
+                c.description_criticite_machine,
+
+                cl.classe_machine,
+                cl.description_classe_machine,
+
+                e.nom_emplacement,
+
+                u.nom_ur,
+                u.description_ur
+            FROM t_machine m
+            JOIN t_criticite_machine c
+                ON m.criticite_machine = c.id_criticite_machine
+            JOIN t_classe_machine cl
+                ON m.classe_machine = cl.id_classe_machine
+            JOIN t_emplacement e
+                ON m.emplacement_machine = e.id_emplacement
+            JOIN t_ur u
+                ON m.ur_machine = u.id_ur
+        """;
+
+        return jdbcTemplate.query(sql, (rs, rowNum) ->
+            new Machine(
+                rs.getInt("id_machine"),
+                rs.getString("machine"),
+                rs.getString("description_machine"),
+                rs.getString("photo"),
+                rs.getDate("date_implementation").toLocalDate(),
+                rs.getString("criticite_machine"),
+                rs.getString("description_criticite_machine"),
+                rs.getString("classe_machine"),
+                rs.getString("description_classe_machine"),
+                rs.getString("nom_emplacement"),
+                rs.getString("nom_ur"),
+                rs.getString("description_ur")
+            )
+        );
+    }
+}
