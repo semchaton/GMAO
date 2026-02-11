@@ -33,14 +33,14 @@ public class MachineRepository {
 
                 u.nom_ur,
                 u.description_ur
-            FROM t_machine m
-            JOIN t_criticite_machine c
+            FROM MACHINE m
+            JOIN CRITICITE_MACHINE c
                 ON m.criticite_machine = c.id_criticite_machine
-            JOIN t_classe_machine cl
+            JOIN CLASSE_MACHINE cl
                 ON m.classe_machine = cl.id_classe_machine
-            JOIN t_emplacement e
+            JOIN EMPLACEMENT e
                 ON m.emplacement_machine = e.id_emplacement
-            JOIN t_ur u
+            JOIN UR u
                 ON m.ur_machine = u.id_ur
         """;
 
