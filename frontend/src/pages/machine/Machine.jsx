@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { getMachines } from "./services/machineApi"
 import MachineList from "./components/MachineList"
 import Navbar from "../../components/Navbar"
-
+import SelectionMachine from "./components/SelectionMachine"
 
 
 export default function Machine() {
@@ -15,12 +15,12 @@ export default function Machine() {
     useEffect(() => {
         loadMachines();
     }, []);
-
+    //<SelectionMachine/>
     return(
-        <div className="min-h-screen text-white flex items-center justify-center">
+        <div className="min-h-screen text-white">
             <Navbar/>
-            <h1>Page machine</h1>
-            <MachineList machines={machines} />
+            <SelectionMachine machines={machines} />
+            
         </div>
         
     )
