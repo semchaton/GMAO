@@ -94,6 +94,15 @@ return (
           />
         </div>
 
+        <div className="w-full">
+          <h3>Responsable production :</h3>
+          <input
+            className="border-2 rounded border-slate-900 w-full"
+            value={selectedMachine?.responsableProdMachine || ""}
+            readOnly
+          />
+        </div>
+
         {selectedMachine && (
           <div className="border-2 rounded border-slate-900 p-2">
             <img
