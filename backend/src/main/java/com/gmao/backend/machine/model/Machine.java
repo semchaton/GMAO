@@ -14,6 +14,7 @@ public class Machine {
     private String emplacement;
     private String ur;
     private String descriptionUR;
+    String responsableProdMachine;
     
     public Machine() {
     //Constructeur vide pour jackson
@@ -21,7 +22,7 @@ public class Machine {
 
     public Machine(int id, String nom, String description, String lienPhoto, LocalDate dateImplementation,
             String criticite, String descriptionCriticite, String classeOuverture, String descriptionClasseOuverture,
-            String emplacement, String ur, String descriptionUR) {
+            String emplacement, String ur, String descriptionUR, String responsableProdMachine) {
         this.id = id;
         this.nom = nom;
         this.description = description;
@@ -34,6 +35,7 @@ public class Machine {
         this.emplacement = emplacement;
         this.ur = ur;
         this.descriptionUR = descriptionUR;
+        this.responsableProdMachine = responsableProdMachine;
     }
 
     public int getId() {
@@ -130,6 +132,14 @@ public class Machine {
 
     public void setDescriptionUR(String descriptionUR) {
         this.descriptionUR = descriptionUR;
+    }
+
+    public String getResponsableProdMachine() {
+        return responsableProdMachine;
+    }
+
+    public void setResponsableProdMachine(String responsableProdMachine) {
+        this.responsableProdMachine = responsableProdMachine;
     }
 
     

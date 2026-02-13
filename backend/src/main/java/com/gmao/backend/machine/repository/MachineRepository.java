@@ -32,7 +32,9 @@ public class MachineRepository {
                 e.nom_emplacement,
 
                 u.nom_ur,
-                u.description_ur
+                u.description_ur,
+            
+                usr.nom_utilisateur
             FROM MACHINE m
             JOIN CRITICITE_MACHINE c
                 ON m.criticite_machine = c.id_criticite_machine
@@ -42,6 +44,9 @@ public class MachineRepository {
                 ON m.emplacement_machine = e.id_emplacement
             JOIN UR u
                 ON m.ur_machine = u.id_ur
+            JOIN UTILISATEUR usr
+                ON usr.ur_utilisateur = u.id_ur
+            WHERE usr.role_utilisateur = 2
         """;
 
         return jdbcTemplate.query(sql, (rs, rowNum) ->
@@ -57,7 +62,8 @@ public class MachineRepository {
                 rs.getString("description_classe_machine"),
                 rs.getString("nom_emplacement"),
                 rs.getString("nom_ur"),
-                rs.getString("description_ur")
+                rs.getString("description_ur"),
+                rs.getString("nom_utilisateur")
             )
         );
     }

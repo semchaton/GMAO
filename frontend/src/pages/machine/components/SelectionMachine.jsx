@@ -83,7 +83,17 @@ return (
       </div>
 
       {/* ================= COLONNE 2 ================= */}
-      <div className="w-1/3 flex justify-center items-start">
+      <div className="w-1/3 flex flex-col items-center gap-6">
+
+        <div className="w-full">
+          <h3>Unité de Réalisation :</h3>
+          <input
+            className="border-2 rounded border-slate-900 w-full"
+            value={selectedMachine?.ur + ", " + selectedMachine?.descriptionUR || ""}
+            readOnly
+          />
+        </div>
+
         {selectedMachine && (
           <div className="border-2 rounded border-slate-900 p-2">
             <img
@@ -93,6 +103,7 @@ return (
             />
           </div>
         )}
+
       </div>
 
       {/* ================= COLONNE 3 ================= */}
