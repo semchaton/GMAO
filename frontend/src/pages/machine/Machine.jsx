@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { getMachines, getCriticite, getClasse, getEmplacement } from "./services/machineApi"
+import { getMachines, getCriticite, getClasse, getEmplacement, getUr } from "./services/machineApi"
 import Navbar from "../../components/Navbar"
 import SelectionMachine from "./components/SelectionMachine"
 import ModificationMachine from "./components/ModificationMachine"
@@ -10,6 +10,7 @@ export default function Machine() {
     const [criticite, setCriticite] = useState([]);
     const [classe, setClasse] = useState([]);
     const [emplacement, setEmplacement] = useState([]);
+    const [ur, setUr] = useState([]);
     const [view, setView] = useState("selection"); 
     // "selection" | "modification" | "ajout"
 
@@ -29,12 +30,17 @@ export default function Machine() {
         const data = await getEmplacement();
         setEmplacement(data);
     };
+    const loadUr = async () => {
+        const data = await getUr();
+        setUr(data);
+    };
 
     useEffect(() => {
         loadMachines();
         loadCriticite();
         loadClasse();
         loadEmplacement();
+        loadUr();
     }, []);
 
     return(
@@ -47,6 +53,7 @@ export default function Machine() {
                     criticite={criticite}
                     classe={classe}
                     emplacement={emplacement}
+                    ur={ur}
                     setView={setView}
                 />
             )}
@@ -56,7 +63,8 @@ export default function Machine() {
                     machines={machines}
                     criticite={criticite}
                     classe={classe}
-                    emplacement={emplacement}  
+                    emplacement={emplacement}
+                    ur={ur}  
                     setView={setView} />
             )}
             {view === "ajout" && (
@@ -64,7 +72,8 @@ export default function Machine() {
                     machines={machines}
                     criticite={criticite}
                     classe={classe}
-                    emplacement={emplacement}   
+                    emplacement={emplacement}
+                    ur={ur}   
                     setView={setView} />
             )}
         </div>
