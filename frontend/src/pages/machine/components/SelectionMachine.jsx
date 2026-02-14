@@ -6,7 +6,7 @@ import iconeAjoutMachine from "../style/iconeAjoutMachine.svg";
 
 
 
-function SelectionMachine({ machines = [], criticite = [], classe = [], setView  }) {
+function SelectionMachine({ machines = [], criticite = [], classe = [], emplacement = [],setView  }) {
   const [selectedMachine, setSelectedMachine] = useState(null)
 
   const handleChange = (e) => {
@@ -20,7 +20,8 @@ function SelectionMachine({ machines = [], criticite = [], classe = [], setView 
   }
   console.log("Criticités :", criticite)
   console.log("Classes :", classe)
-  console.log(machines)
+  console.log("Emplacements :", emplacement)
+  console.log("Machines :", machines)
 return (
   <div className="mt-20 px-10">
 
